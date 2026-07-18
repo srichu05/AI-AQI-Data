@@ -1,0 +1,10 @@
+pandas
+openpyxl
+numpy
+scipy
+pyyaml
+geopandas
+shapely
+fiona
+pyproj
+rtree

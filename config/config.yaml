@@ -1,0 +1,9 @@
+paths:
+
+  cpcb_raw: "data/raw/cpcb/"
+  gee_raw: "data/raw/gee/"
+
+  cpcb_interim: "data/interim/cpcb_combined.csv"
+  gee_interim: "data/interim/gee_clean.csv"
+
+  final_dataset: "data/final/merged_dataset.csv"

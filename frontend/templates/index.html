@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Risk Dashboard — Karnataka</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Leaflet Heat -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-brand">Project Dashboard</div>
+            
+            <nav class="sidebar-nav">
+                <div class="sidebar-nav-group">Project Overview</div>
+                <ul>
+                    <li><a href="#overview" class="active">Project Overview</a></li>
+                </ul>
+                
+                <div class="sidebar-nav-group">Obj 1 — Data Integration</div>
+                <ul>
+                    <li><a href="#ground-data">Ground Data</a></li>
+                    <li><a href="#satellite-data">Satellite Data</a></li>
+                    <li><a href="#gis-data">GIS Data</a></li>
+                    <li><a href="#coverage-map">District Coverage Map</a></li>
+                    <li><a href="#fusion-pipeline">Data Fusion Pipeline</a></li>
+                </ul>
+
+                <div class="sidebar-nav-group">Obj 2 — Geospatial Analysis</div>
+                <ul>
+                    <li><a href="#pm25-choropleth">PM2.5 Choropleth</a></li>
+                    <li><a href="#pollution-hotspots">Pollution Hotspots</a></li>
+                    <li><a href="#spatial-autocorr">Spatial Autocorrelation</a></li>
+                    <li><a href="#top-districts">Top Polluted Districts</a></li>
+                    <li><a href="#seasonal-trends">Seasonal Trends</a></li>
+                    <li><a href="#urban-rural">Urban vs Rural</a></li>
+                    <li><a href="#industrial-zones">Industrial Zones</a></li>
+                    <li><a href="#spatial-features">Spatial Features</a></li>
+                </ul>
+
+                <div class="sidebar-nav-group">Final Dataset</div>
+                <ul>
+                    <li><a href="#dataset-stats">Dataset Stats</a></li>
+                    <li><a href="#feature-summary">Feature Summary</a></li>
+                    <li><a href="#dataset-preview">Dataset Preview</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <!-- SECTION 1: OVERVIEW -->
+            <section id="overview">
+                <h2>Project Overview</h2>
+                <div class="card">
+                    <h1>AI-Driven Geospatial Modeling and Risk Mapping</h1>
+                    <div class="subtitle">Localized respiratory and skin health risk estimation using satellite, ground, and GIS-integrated air pollution data — Karnataka, India (2020–2025)</div>
+                    <div class="note">This system estimates environmental health risk only. It does not perform medical diagnosis.</div>
+                </div>
+
+                <div class="grid-4">
+                    <div class="card obj-card complete">Obj 1: Data Integration</div>
+                    <div class="card obj-card complete">Obj 2: Geospatial Analysis</div>
+                    <div class="card obj-card pending">Obj 3: AI Model Training (coming soon)</div>
+                    <div class="card obj-card pending">Obj 4: Web Platform (coming soon)</div>
+                </div>
+
+                <div class="grid-4" id="overview-stats">
+                    <!-- Populated by JS -->
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">System Architecture</h3>
+                    <div class="arch-diagram">
+                        <div class="arch-box">Satellite Data</div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-box">Ground Stations</div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-box">GIS Features</div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-box">Geospatial Analysis</div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-box">AI Risk Model</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: DATA INTEGRATION -->
+            <h2 id="ground-data">Obj 1 — Multi-Source Data Integration</h2>
+            <div class="grid-3">
+                <div class="card top-bar-sage">
+                    <h3 class="card-title">CPCB Ground Data</h3>
+                    <ul class="clean-list">
+                        <li>PM2.5, PM10, NO2, O3</li>
+                        <li>Source: CPCB Stations</li>
+                        <li>Coverage: 13 districts</li>
+                        <li>Date range: 2020–2025</li>
+                    </ul>
+                </div>
+                <div class="card top-bar-dust" id="satellite-data">
+                    <h3 class="card-title">Satellite Data</h3>
+                    <ul class="clean-list">
+                        <li>NO2, O3, SO2, CO, UV Aerosol Index, AOD, PM2.5 est.</li>
+                        <li>Source: GEE / Sentinel-5P</li>
+                        <li>Resolution: 3.5km</li>
+                        <li>Daily global coverage</li>
+                    </ul>
+                </div>
+                <div class="card top-bar-sand" id="gis-data">
+                    <h3 class="card-title">GIS Contextual Data</h3>
+                    <ul class="clean-list">
+                        <li>Population density, road density</li>
+                        <li>Land use type</li>
+                        <li>Urban/rural classification</li>
+                        <li>Industrial zones, green cover</li>
+                        <li>District area (GADM shapefile)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" id="coverage-map">
+                <h3 class="card-title">District Coverage Map</h3>
+                <div id="map-coverage" class="map-container" style="height: 420px;"></div>
+            </div>
+
+            <div class="card" id="fusion-pipeline">
+                <h3 class="card-title">Data Fusion Pipeline</h3>
+                <div class="pipeline-steps">
+                    <div class="pipeline-step"><div class="step-number">1</div><div class="step-text">Raw CPCB CSV files cleaned and standardized</div></div>
+                    <div class="pipeline-step"><div class="step-number">2</div><div class="step-text">Sentinel-5P NetCDF4 downloaded and converted</div></div>
+                    <div class="pipeline-step"><div class="step-number">3</div><div class="step-text">Spatial alignment to 1km grid</div></div>
+                    <div class="pipeline-step"><div class="step-number">4</div><div class="step-text">GIS contextual features joined by district</div></div>
+                    <div class="pipeline-step"><div class="step-number">5</div><div class="step-text">Unified pollutant columns created (ground + satellite fallback)</div></div>
+                    <div class="pipeline-step"><div class="step-number">6</div><div class="step-text">Final enriched dataset: 65,760 rows × 38 columns</div></div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: GEOSPATIAL ANALYSIS -->
+            <h2 id="pm25-choropleth">Obj 2 — Geospatial Analysis</h2>
+            
+            <div class="card">
+                <h3 class="card-title">Mean PM2.5 Concentration by District (2020–2025)</h3>
+                <div id="map-pm25" class="map-container" style="height: 450px;"></div>
+            </div>
+
+            <div class="card" id="pollution-hotspots">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h3 class="card-title" style="margin-bottom: 0;">Pollution Intensity Heatmap — Karnataka</h3>
+                    <button class="toggle-btn" id="heatmap-toggle" style="margin-bottom: 0;">Show NO2 Heatmap</button>
+                </div>
+                <div id="map-heatmap" class="map-container" style="height: 420px;"></div>
+            </div>
+
+            <div class="row">
+                <div class="col card" id="spatial-autocorr">
+                    <h3 class="card-title">Spatial Autocorrelation</h3>
+                    <div id="autocorr-content">Loading...</div>
+                </div>
+                <div class="col card" id="lisa-cluster">
+                    <h3 class="card-title">LISA Spatial Cluster Map — PM2.5 Pollution</h3>
+                    <div id="map-lisa" class="map-container" style="height: 420px;"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col card" id="top-districts">
+                    <h3 class="card-title">Top 10 Districts by Mean PM2.5</h3>
+                    <div class="chart-container" style="height: 340px;"><canvas id="chart-top10"></canvas></div>
+                </div>
+                <div class="col card" id="seasonal-trends">
+                    <h3 class="card-title">Monthly PM2.5 Trend — Karnataka Average</h3>
+                    <div class="chart-container" style="height: 300px;"><canvas id="chart-seasonal"></canvas></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col card" id="urban-rural">
+                    <h3 class="card-title">Pollution Levels: Urban vs Rural vs Semi-Urban</h3>
+                    <div class="chart-container" style="height: 300px;"><canvas id="chart-urban"></canvas></div>
+                    <div class="note" id="urban-note" style="margin-top: 12px;"></div>
+                </div>
+                <div class="col card" id="industrial-zones">
+                    <h3 class="card-title">Industrial vs Non-Industrial</h3>
+                    <div class="grid-2" style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                        <div class="card top-bar-peach" style="margin:0; box-shadow:none; padding:16px;" id="ind-card"></div>
+                        <div class="card top-bar-sage" style="margin:0; box-shadow:none; padding:16px;" id="non-ind-card"></div>
+                    </div>
+                    <div class="note" id="ind-note" style="margin-top: 16px;"></div>
+                </div>
+            </div>
+
+            <div class="card" id="spatial-features">
+                <h3 class="card-title">Spatial Feature Engineering</h3>
+                <div class="table-responsive">
+                    <table id="spatial-features-table">
+                        <thead><tr><th>Feature Name</th><th>Description</th><th>Value Range</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card" id="exposure-index">
+                <h3 class="card-title">Population-Weighted Exposure Index by District</h3>
+                <div class="chart-container" style="height: 500px;"><canvas id="chart-exposure"></canvas></div>
+                <div class="note" style="margin-top: 8px;">Exposure Index = population density × PM2.5 / 1000. Higher values indicate more people exposed to higher pollution.</div>
+            </div>
+
+            <!-- SECTION 4: FINAL DATASET -->
+            <h2 id="dataset-stats">Final AI-Ready Dataset</h2>
+            
+            <div class="grid-4" id="final-stats">
+                <!-- Populated by JS -->
+            </div>
+
+            <div class="card" id="feature-summary">
+                <h3 class="card-title">ML Feature Readiness</h3>
+                <ul class="clean-list checklist" id="ml-features-list">
+                    <li>Satellite features (7): NO2_col, O3_col, SO2_col, CO_col, UV_aerosol_index, AOD_actual, PM25_est</li>
+                    <li>Ground features (4): PM25_unified, NO2_unified, O3_unified, PM10_unified</li>
+                    <li>GIS features (7): pop_density, road_density_km_km2, urban_rural, industrial_zone, green_cover_pct, nearest_highway, district_area_km2</li>
+                    <li>Spatial features (8): pm25_district_mean, pm25_district_std, pm25_percentile_rank, pollution_trend_slope, seasonal_amplitude, spatial_lag_pm25, hotspot_label, distance_to_nearest_hotspot_km</li>
+                    <li>Temporal features (4): month_sin, month_cos, doy_sin, doy_cos</li>
+                    <li>Land use encoded (6): land_use_Agricultural, land_use_Coastal, land_use_Forest, land_use_Industrial, land_use_Mixed, land_use_Urban</li>
+                </ul>
+            </div>
+
+            <div class="card" id="dataset-preview">
+                <h3 class="card-title">Dataset Preview (first 100 rows)</h3>
+                <div class="table-responsive" style="max-height: 320px; overflow-y: auto;">
+                    <table class="table-preview" id="preview-table">
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="obj-summary">
+                <div class="banner banner-complete">Objective 1 Complete — Multi-Source Data Integration — 3 data sources integrated, 30 districts, 65,760 records</div>
+                <div class="banner banner-complete">Objective 2 Complete — Geospatial Analysis & Feature Extraction — Moran's I, LISA, hotspot analysis, 8 spatial features extracted</div>
+                <div class="banner banner-pending">Objective 3 — AI Model Training (Pending)</div>
+                <div class="banner banner-pending">Objective 4 — Web Platform Dashboard (Pending)</div>
+            </div>
+
+            <footer class="footer">
+                AI-Driven Geospatial Health Risk Estimation · Karnataka, India · 2020–2025 · Environmental risk estimation only — not a diagnostic tool
+            </footer>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

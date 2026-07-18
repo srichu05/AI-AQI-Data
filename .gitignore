@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Generated data
+data/interim/*
+data/final/*
+
+# Raw datasets
+data/raw/cpcb/*
+data/raw/gee/*
+data/raw/weather/*
+data/raw/ndvi/*
+data/raw/elevation/*
+data/raw/distance/*
+data/raw/gis/*
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/final/.gitkeep
