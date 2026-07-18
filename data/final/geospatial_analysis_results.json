@@ -1,0 +1,69 @@
+{
+    "morans_i": {
+        "statistic": 0.38386600490213296,
+        "p_value": 0.001,
+        "interpretation": "Significant positive spatial autocorrelation (clustering of similar values)."
+    },
+    "lisa_clusters": {
+        "Not Significant": 21,
+        "High-High hotspot": 5,
+        "Low-High outlier": 4
+    },
+    "district_clusters": {
+        "bagalkot": "Not Significant",
+        "bangalore": "Not Significant",
+        "bangalore rural": "Not Significant",
+        "belgaum": "Not Significant",
+        "bellary": "Not Significant",
+        "bidar": "High-High hotspot",
+        "bijapur": "High-High hotspot",
+        "chamrajnagar": "Not Significant",
+        "chikballapura": "Not Significant",
+        "chikmagalur": "Not Significant",
+        "chitradurga": "Not Significant",
+        "dakshina kannada": "Low-High outlier",
+        "davanagere": "Not Significant",
+        "dharwad": "Not Significant",
+        "gadag": "Not Significant",
+        "gulbarga": "High-High hotspot",
+        "hassan": "Low-High outlier",
+        "haveri": "Not Significant",
+        "kodagu": "Not Significant",
+        "kolar": "Not Significant",
+        "koppal": "Not Significant",
+        "mandya": "Not Significant",
+        "mysore": "Low-High outlier",
+        "raichur": "High-High hotspot",
+        "ramanagara": "Not Significant",
+        "shimoga": "Not Significant",
+        "tumkur": "Not Significant",
+        "udupi": "Low-High outlier",
+        "uttara kannada": "Not Significant",
+        "yadgir": "High-High hotspot"
+    },
+    "urban_vs_rural": {
+        "urban_mean_pm25": 24.806431906029843,
+        "rural_mean_pm25": 23.496563905325537,
+        "mann_whitney_u": 12.0,
+        "p_value": 0.5882352941176471
+    },
+    "monthly_avg_pm25": {
+        "1": 20.575942053663464,
+        "2": 22.460331271527473,
+        "3": 28.33149124285883,
+        "4": 31.04651141689615,
+        "5": 27.387754303486517,
+        "6": 21.35531409297049,
+        "7": 19.166776038762222,
+        "8": 20.60814887779168,
+        "9": 18.63511678969769,
+        "10": 24.67772013820543,
+        "11": 23.55605622552405,
+        "12": 20.533743211417956
+    },
+    "peak_month": 4,
+    "industrial_vs_non_industrial": {
+        "industrial_mean_pm25": 24.54722315684045,
+        "non_industrial_mean_pm25": 23.397341953931313
+    }
+}

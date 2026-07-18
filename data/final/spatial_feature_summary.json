@@ -1,0 +1,14 @@
+{
+    "features_added": [
+        "pm25_district_mean",
+        "pm25_district_std",
+        "pm25_percentile_rank",
+        "pollution_trend_slope",
+        "seasonal_amplitude",
+        "spatial_lag_pm25",
+        "hotspot_label",
+        "distance_to_nearest_hotspot_km"
+    ],
+    "districts_processed": 30,
+    "rows_processed": 65760
+}

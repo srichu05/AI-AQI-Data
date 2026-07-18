@@ -1,0 +1,272 @@
+[
+    {
+        "district": "Bagalkot",
+        "mean_pm25": 23.85852552647226,
+        "mean_no2": 2.205549963559115,
+        "mean_o3": 4.776400133028012,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 4.2361558314963315
+    },
+    {
+        "district": "Bangalore",
+        "mean_pm25": 24.806431906029843,
+        "mean_no2": 3.769618624955771e-05,
+        "mean_o3": 0.11901637892861039,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 61.477852620252165
+    },
+    {
+        "district": "Bangalore Rural",
+        "mean_pm25": 23.425480494425216,
+        "mean_no2": 2.639495728712205e-05,
+        "mean_o3": 0.11899996357766508,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 4.343225149516128
+    },
+    {
+        "district": "Belgaum",
+        "mean_pm25": 24.72366745068784,
+        "mean_no2": 2.534089679929988e-05,
+        "mean_o3": 0.12018884968048076,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 6.710219903787781
+    },
+    {
+        "district": "Bellary",
+        "mean_pm25": 25.720607106936335,
+        "mean_no2": 3.423937744807766e-05,
+        "mean_o3": 0.11998192039205076,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 4.308530238312837
+    },
+    {
+        "district": "Bidar",
+        "mean_pm25": 27.237332272128953,
+        "mean_no2": 1.0046661282247875,
+        "mean_o3": 2.968903775577801,
+        "lisa_cluster": "High-High hotspot",
+        "hotspot_label": 1,
+        "exposure_index": 6.172228749136939
+    },
+    {
+        "district": "Bijapur",
+        "mean_pm25": 25.23261705542738,
+        "mean_no2": 2.8322481693737494e-05,
+        "mean_o3": 0.1204229138869642,
+        "lisa_cluster": "High-High hotspot",
+        "hotspot_label": 1,
+        "exposure_index": 4.168216530917086
+    },
+    {
+        "district": "Chamrajnagar",
+        "mean_pm25": 20.63747294917753,
+        "mean_no2": 7.854188501506115,
+        "mean_o3": 8.456759371975096,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 2.6364100572153
+    },
+    {
+        "district": "Chikballapura",
+        "mean_pm25": 23.83826035960092,
+        "mean_no2": 2.168865553949946e-05,
+        "mean_o3": 0.11914914886888017,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 4.601915261755805
+    },
+    {
+        "district": "Chikmagalur",
+        "mean_pm25": 21.168062291267855,
+        "mean_no2": 1.760419776954045e-05,
+        "mean_o3": 0.11924076790155379,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 1.4659269415211953
+    },
+    {
+        "district": "Chitradurga",
+        "mean_pm25": 24.67137217771046,
+        "mean_no2": 2.0838291287892843e-05,
+        "mean_o3": 0.1195661128992945,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 2.695459962295241
+    },
+    {
+        "district": "Dakshina Kannada",
+        "mean_pm25": 23.589220513659104,
+        "mean_no2": 2.12758086570213e-05,
+        "mean_o3": 0.11989020740829086,
+        "lisa_cluster": "Low-High outlier",
+        "hotspot_label": 0,
+        "exposure_index": 7.3284562496148205
+    },
+    {
+        "district": "Davanagere",
+        "mean_pm25": 23.542342544057263,
+        "mean_no2": 2.0959360172005292e-05,
+        "mean_o3": 0.11964513428174461,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 5.70298211962104
+    },
+    {
+        "district": "Dharwad",
+        "mean_pm25": 24.15295918921275,
+        "mean_no2": 2.318503049953473e-05,
+        "mean_o3": 0.11998903003416837,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 7.242449926806237
+    },
+    {
+        "district": "Gadag",
+        "mean_pm25": 21.37997309849904,
+        "mean_no2": 2.9891813455075695,
+        "mean_o3": 7.926296388670627,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 3.8673341876344245
+    },
+    {
+        "district": "Gulbarga",
+        "mean_pm25": 26.338785779519075,
+        "mean_no2": 3.0748114419646844e-05,
+        "mean_o3": 0.12052670155118417,
+        "lisa_cluster": "High-High hotspot",
+        "hotspot_label": 1,
+        "exposure_index": 5.954740458537229
+    },
+    {
+        "district": "Hassan",
+        "mean_pm25": 23.714112239448493,
+        "mean_no2": 2.3116048702493224,
+        "mean_o3": 1.6681330122259896,
+        "lisa_cluster": "Low-High outlier",
+        "hotspot_label": 0,
+        "exposure_index": 2.8224641459861997
+    },
+    {
+        "district": "Haveri",
+        "mean_pm25": 24.04534860375955,
+        "mean_no2": 7.080001301014388,
+        "mean_o3": 4.883179223612682,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 3.7757062216502475
+    },
+    {
+        "district": "Kodagu",
+        "mean_pm25": 20.413412609681025,
+        "mean_no2": 1.7600909343074196e-05,
+        "mean_o3": 0.1190550682210442,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 1.7324393922349273
+    },
+    {
+        "district": "Kolar",
+        "mean_pm25": 24.713985562263193,
+        "mean_no2": 1.5934363111357297,
+        "mean_o3": 2.9479045216584243,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 4.562504308845885
+    },
+    {
+        "district": "Koppal",
+        "mean_pm25": 23.450913650458983,
+        "mean_no2": 4.214551209366582,
+        "mean_o3": 5.013339458778426,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 3.649559980657497
+    },
+    {
+        "district": "Mandya",
+        "mean_pm25": 23.213533636538383,
+        "mean_no2": 2.1493808265077422e-05,
+        "mean_o3": 0.11913081536085869,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 5.493919047854065
+    },
+    {
+        "district": "Mysore",
+        "mean_pm25": 22.644790704839565,
+        "mean_no2": 2.0216965979797194e-05,
+        "mean_o3": 0.11909779982135013,
+        "lisa_cluster": "Low-High outlier",
+        "hotspot_label": 0,
+        "exposure_index": 6.453858326753521
+    },
+    {
+        "district": "Raichur",
+        "mean_pm25": 25.4965965959181,
+        "mean_no2": 2.2343720121244215,
+        "mean_o3": 1.770577426830179,
+        "lisa_cluster": "High-High hotspot",
+        "hotspot_label": 1,
+        "exposure_index": 5.095124672401405
+    },
+    {
+        "district": "Ramanagara",
+        "mean_pm25": 24.61704058706023,
+        "mean_no2": 2.85181080193569,
+        "mean_o3": 8.970082481385889,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 5.422252279022298
+    },
+    {
+        "district": "Shimoga",
+        "mean_pm25": 21.088419239662898,
+        "mean_no2": 6.208945030812102,
+        "mean_o3": 12.173683101906507,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 1.9350935555137914
+    },
+    {
+        "district": "Tumkur",
+        "mean_pm25": 24.220249941902143,
+        "mean_no2": 2.0840099156520126e-05,
+        "mean_o3": 0.11927307230537762,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 4.7931896733792545
+    },
+    {
+        "district": "Udupi",
+        "mean_pm25": 23.419723260575687,
+        "mean_no2": 4.3208747114095765,
+        "mean_o3": 3.8054001815055365,
+        "lisa_cluster": "Low-High outlier",
+        "hotspot_label": 0,
+        "exposure_index": 6.195759952192063
+    },
+    {
+        "district": "Uttara Kannada",
+        "mean_pm25": 22.157230885633663,
+        "mean_no2": 1.8465967493868136e-05,
+        "mean_o3": 0.12018796926748346,
+        "lisa_cluster": "Not Significant",
+        "hotspot_label": 0,
+        "exposure_index": 1.1238325409966927
+    },
+    {
+        "district": "Yadgir",
+        "mean_pm25": 28.20036482029539,
+        "mean_no2": 2.569781393669685,
+        "mean_o3": 3.62185801441283,
+        "lisa_cluster": "High-High hotspot",
+        "hotspot_label": 1,
+        "exposure_index": 4.255316954444826
+    }
+]

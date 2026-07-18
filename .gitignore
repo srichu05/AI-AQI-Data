@@ -19,7 +19,14 @@ env/
 
 # Generated data
 data/interim/*
-data/final/*
+!data/final/
+!data/final/final_dataset.csv
+!data/final/geospatial_analysis_results.json
+!data/final/karnataka_district_stats.json
+!data/final/karnataka_heatmap_points.json
+!data/final/karnataka_risk_zones.geojson
+!data/final/spatial_feature_summary.json
+!data/final/karnataka_spatial_features.csv
 
 # Raw datasets
 data/raw/cpcb/*
